@@ -10,7 +10,8 @@ const MESSAGE = Object.freeze({
 });
 
 const ERROR = Object.freeze({
-  MOVE_INVALID: '[ERROR] 다리 길이는 3부터 20 사이의 숫자여야 합니다.',
+  LENGTH_INVALID: '[ERROR] 다리 길이는 3부터 20 사이의 숫자여야 합니다.',
+  MOVE_INVALID: '[ERROR] 이동 입력 문자는 U또는 D입니다.',
   RETRY_INVALID: '[ERROR] 재시작 입력 문자는 R또는 Q입니다.',
 });
 
