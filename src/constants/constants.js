@@ -15,4 +15,11 @@ const ERROR = Object.freeze({
   RETRY_INVALID: '[ERROR] 재시작 입력 문자는 R또는 Q입니다.',
 });
 
-module.exports = { MESSAGE, ERROR };
+const INPUT = Object.freeze({
+  UP: 'U',
+  DOWN: 'D',
+  RIGHT: 'O',
+  WRONG: 'X',
+});
+
+module.exports = { MESSAGE, ERROR, INPUT };
