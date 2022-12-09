@@ -20,6 +20,7 @@ const INPUT = Object.freeze({
   DOWN: 'D',
   RIGHT: 'O',
   WRONG: 'X',
+  BLANK: ' ',
 });
 
 module.exports = { MESSAGE, ERROR, INPUT };
