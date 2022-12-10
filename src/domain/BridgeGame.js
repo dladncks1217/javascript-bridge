@@ -60,6 +60,11 @@ class BridgeGame {
       return isCorrect.Down(this.#nowState, this.#answerBridge);
   }
 
+  finishCheck() {
+    if (this.#answerBridge[0].length === this.#nowState) return true;
+    return false;
+  }
+
   retry() {
     this.#nowState = 0;
   }

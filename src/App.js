@@ -27,8 +27,7 @@ class App {
           BridgeMaker.makeBridge(Number(input), BridgeRandomNumberGenerator.generate)
         );
         return this.countCheck();
-      } catch (err) {
-        console.error(err);
+      } catch (error) {
         OutputView.inputLengthError();
         return this.gameSetting();
       }
@@ -45,13 +44,10 @@ class App {
       try {
         validCheck.move(input);
         const bridge = this.#bridgeGame.move(input, isCorrectAnswer, getBridgeResult);
+        const [up, down] = [bridge[0][bridge[0].length - 1], bridge[1][bridge[0].length - 1]];
         OutputView.printMap(bridge);
-        if (
-          bridge[0][bridge[0].length - 1] === INPUT.WRONG ||
-          bridge[1][bridge[0].length - 1] === INPUT.WRONG
-        )
-          return this.retryCheck(bridge);
-
+        if (up === INPUT.WRONG || down === INPUT.WRONG) return this.retryCheck(bridge);
+        if (this.#bridgeGame.finishCheck()) return this.gameEnd(bridge, true, this.#trycount);
         return this.moveState();
       } catch (error) {
         OutputView.retryError();
@@ -67,15 +63,14 @@ class App {
         this.#bridgeGame.retry();
         return this.countCheck();
       }
-
       if (input.toUpperCase() === INPUT.QUIT) {
-        OutputView.printResult(bridge, false, this.#trycount);
-        return this.gameEnd();
+        return this.gameEnd(bridge, false, this.#trycount);
       }
     });
   }
 
-  gameEnd() {
+  gameEnd(bridge, isFinished, count) {
+    OutputView.printResult(bridge, isFinished, count);
     Console.close();
   }
 }
