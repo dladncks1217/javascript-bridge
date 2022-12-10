@@ -61,6 +61,7 @@ class BridgeGame {
   }
 
   moveCorrectCheck(input, isCorrect) {
+    console.log(this.#answerBridge);
     if (input.toUpperCase() === INPUT.UP) return isCorrect.Up(this.#nowState, this.#answerBridge);
     if (input.toUpperCase() === INPUT.DOWN)
       return isCorrect.Down(this.#nowState, this.#answerBridge);
