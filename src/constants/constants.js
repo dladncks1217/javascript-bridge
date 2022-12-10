@@ -18,11 +18,11 @@ const ERROR = Object.freeze({
 const INPUT = Object.freeze({
   UP: 'U',
   DOWN: 'D',
+  RETRY: 'R',
+  QUIT: 'Q',
   RIGHT: 'O',
   WRONG: 'X',
   BLANK: ' ',
-  RETRY: 'R',
-  QUIT: 'Q',
 });
 
 module.exports = { MESSAGE, ERROR, INPUT };
