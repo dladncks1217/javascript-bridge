@@ -21,6 +21,8 @@ const INPUT = Object.freeze({
   RIGHT: 'O',
   WRONG: 'X',
   BLANK: ' ',
+  RETRY: 'R',
+  QUIT: 'Q',
 });
 
 module.exports = { MESSAGE, ERROR, INPUT };

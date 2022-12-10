@@ -40,7 +40,14 @@ const OutputView = {
    * <p>
    * 출력을 위해 필요한 메서드의 인자(parameter)는 자유롭게 추가하거나 변경할 수 있다.
    */
-  printResult() {},
+  printResult(bridge, isSuccessed, trycount) {
+    const upBridge = `[ ${String(bridge[0]).split(',').join(' | ')} ]`;
+    const downBridge = `[ ${String(bridge[1]).split(',').join(' | ')} ]`;
+    Console.print(MESSAGE.GAME_RESULT);
+    Console.print(upBridge + '\n' + downBridge + '\n');
+    if (isSuccessed) Console.print(MESSAGE.GAME_SUCCESSED + '\n' + MESSAGE.TRY_COUNT(trycount));
+    if (!isSuccessed) Console.print(MESSAGE.GAME_FAILED + '\n' + MESSAGE.TRY_COUNT(trycount));
+  },
 };
 
 module.exports = OutputView;

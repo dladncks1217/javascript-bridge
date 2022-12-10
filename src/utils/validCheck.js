@@ -10,6 +10,12 @@ const validCheck = {
       throw new Error();
     }
   },
+
+  retry(userInput) {
+    if (userInput.toUpperCase() !== INPUT.RETRY && userInput.toUpperCase() !== INPUT.QUIT) {
+      throw new Error();
+    }
+  },
 };
 
 module.exports = validCheck;
